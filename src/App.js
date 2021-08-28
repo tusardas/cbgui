@@ -1,7 +1,7 @@
 import './App.scss';
 import Home from './pages/Home.js';
 import Signup from './pages/Signup.js';
-import Signin from './pages/Signin2.js';
+import Signin from './pages/Signin.js';
 import Lobby from './pages/Lobby.js';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 function App() {

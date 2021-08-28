@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 */
 export default function Lobby() {
     //const classes = useStyles();
-    const [showSidebar, setShowSidebar] = useState(true);
+    const [showSidebar, setShowSidebar] = useState(false);
 
     const toggleSidebar = () => {
        
@@ -44,7 +44,7 @@ export default function Lobby() {
             </Grid>
             <Grid item container direction="row">
                 <Grid item>
-                    <Drawer anchor='left' open={showSidebar} onClose={() => toggleSidebar()} width={500}>
+                    <Drawer anchor='left' open={showSidebar} onClose={() => toggleSidebar()}>
                         <Sidebar />
                     </Drawer>
                     Rest of the page

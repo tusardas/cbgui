@@ -22,7 +22,7 @@ const Sidebar = () => {
             </List>
             <Divider />
             <List>
-                {['My Profile', 'Settings', 'Contact'].map((text, index) => (
+                {['My Profile', 'Settings', 'Sign out'].map((text, index) => (
                 <ListItem button key={text}>
                     <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                     <ListItemText primary={text} />
