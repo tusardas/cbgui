@@ -8,6 +8,7 @@ import Drawer from '@material-ui/core/Drawer';
 
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
+import { environment } from '../components/env';
 
 export default function Profile() {
     //const classes = useStyles();
@@ -29,7 +30,11 @@ export default function Profile() {
     useEffect(
         () => {
             const fetchUser = async () => {
-                const response = await fetch('https://localhost:8443/api/profile/', {
+                var apiUrl = `${environment.apiUrl}`;
+                console.log("apiUrl -----> " + apiUrl);
+                apiUrl = apiUrl + "/api/profile";
+                console.log("apiUrl after append = ----> " + apiUrl);
+                const response = await fetch(apiUrl, {
                     method: 'GET',
                     credentials: 'include',
                     header : {

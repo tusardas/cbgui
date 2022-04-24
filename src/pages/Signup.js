@@ -22,6 +22,8 @@ import {SimpleDialog} from '../components/SimpleDialog.js';
 
 import { useHistory } from 'react-router-dom';
 
+import { environment } from '../components/env';
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -85,8 +87,11 @@ export default function Signup() {
         var object = {};
         formData.forEach((value, key) => object[key] = value);
         var json = JSON.stringify(object);
-
-        const response = await fetch('http://localhost:8080/user', {
+        var apiUrl = `${environment.apiUrl}`;
+        console.log("apiUrl -----> " + apiUrl);
+        apiUrl = apiUrl + "/user";
+        console.log("apiUrl after append = ----> " + apiUrl);
+        const response = await fetch(apiUrl, {
             method: 'POST',
             body: json
         });

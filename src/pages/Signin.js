@@ -21,6 +21,8 @@ import { useHistory } from 'react-router-dom';
 
 import {Copyright} from '../components/Copyright.js';
 
+import { environment } from '../components/env';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
@@ -76,8 +78,11 @@ export default function SignInSide() {
         var object = {};
         formData.forEach((value, key) => object[key] = value);
         var json = JSON.stringify(object);
-
-        const response = await fetch('https://localhost:8443/user/signin', {
+        var apiUrl = `${environment.apiUrl}`;
+        console.log("apiUrl -----> " + apiUrl);
+        apiUrl = apiUrl + "/user/signin";
+        console.log("apiUrl after append = ----> " + apiUrl);
+        const response = await fetch(apiUrl, {
             method: 'POST',
             body: json,
             credentials: 'include',
